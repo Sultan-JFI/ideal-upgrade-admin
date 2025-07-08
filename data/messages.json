@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Ali",
+    "email": "ali@example.com",
+    "message": "When will the new model be available?"
+  },
+  {
+    "name": "Reza",
+    "email": "reza@example.com",
+    "message": "I love the retro design!"
+  }
+]
