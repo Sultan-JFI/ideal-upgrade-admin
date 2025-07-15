@@ -22,6 +22,14 @@ jobs:
         cd buildozer && sudo python3 setup.py install
         cd ..
 
+    - name: Patch Build Tools manually (force 33.0.2)
+      run: |
+        mkdir -p /home/runner/.buildozer/android/platform/android-sdk/build-tools/33.0.2
+        ln -s /usr/bin/aidl /home/runner/.buildozer/android/platform/android-sdk/build-tools/33.0.2/aidl || true
+        ln -s /usr/bin/dx /home/runner/.buildozer/android/platform/android-sdk/build-tools/33.0.2/dx || true
+        ln -s /usr/bin/aapt /home/runner/.buildozer/android/platform/android-sdk/build-tools/33.0.2/aapt || true
+        ln -s /usr/bin/zipalign /home/runner/.buildozer/android/platform/android-sdk/build-tools/33.0.2/zipalign || true
+
     - name: Configure buildozer.spec
       run: |
         buildozer init || true
