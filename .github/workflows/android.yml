@@ -22,11 +22,6 @@ jobs:
         cd buildozer && sudo python3 setup.py install
         cd ..
 
-    - name: Install specific Android build-tools
-      run: |
-        yes | sdkmanager "build-tools;33.0.2"
-        ls $ANDROID_HOME/build-tools
-
     - name: Configure buildozer.spec
       run: |
         buildozer init || true
